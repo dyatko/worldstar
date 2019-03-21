@@ -10,7 +10,7 @@ d3.tsvParse(
   data => countryNames.set(data.iso_n3, data.name)
 );
 
-module.exports.getSVG = ([countryPopularity, max]) => {
+module.exports.getSVG = ([countryPopularity]) => {
   const d3n = new D3Node();
   const svg = d3n.createSVG(640, 420);
   const world = require("world-atlas/world/110m");
@@ -19,6 +19,9 @@ module.exports.getSVG = ([countryPopularity, max]) => {
     d3.geoMercator().fitWidth(svg.attr("width"), countries)
   );
   const stats = [];
+  const splits = Array.from(new Set(countryPopularity.values())).sort(
+    (a, b) => a - b
+  );
 
   svg
     .append("g")
@@ -33,14 +36,17 @@ module.exports.getSVG = ([countryPopularity, max]) => {
       const stars = countryPopularity.get(name);
 
       if (stars) {
-        const ratio = stars / max;
-        const opacity = (ratio * 0.3 + 0.7).toFixed(2);
+        const saturation = (
+          splits.indexOf(stars) /
+          (splits.length - 1)
+        ).toFixed(2);
+        const opacity = (saturation * 0.3 + 0.7).toFixed(2);
 
-        countryPopularity.remove(name);
+        countryPopularity.delete(name);
         stats.push({
           name,
           stars,
-          fromMax: Math.round(ratio * 100) + "%",
+          saturation,
           opacity
         });
 

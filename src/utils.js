@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const d3 = require("d3");
 const yargs = require("yargs");
 const name = require("../package").name;
 const description = require("../package").description;
@@ -35,7 +34,7 @@ module.exports.getCountryPopularity = stargazers =>
 
       return [countryPopularity, max];
     },
-    [d3.map(), 0]
+    [new Map(), 0]
   );
 
 module.exports.argv = yargs

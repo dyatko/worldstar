@@ -1,12 +1,12 @@
 {
   "name": "worldstar",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Generates world map chart of GitHub stargazers",
   "scripts": {
     "prettier": "prettier --write \"src/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Marat Dyatko <i@marat.by>",
   "license": "MIT",
   "main": "src/index.js",
   "bin": {
@@ -34,6 +34,11 @@
     "@types/yargs": "12.0.10",
     "arkit": "1.4.2",
     "prettier": "1.16.4"
+  },
+  "arkit": {
+    "output": {
+      "path": "arkit.svg"
+    }
   },
   "renovate": {
     "extends": [
