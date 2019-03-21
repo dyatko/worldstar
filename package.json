@@ -1,6 +1,6 @@
 {
   "name": "worldstar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generates world map chart of GitHub stargazers",
   "scripts": {
     "prettier": "prettier --write \"src/*.ts\"",
@@ -40,5 +40,14 @@
       "config:base",
       ":automergeAll"
     ]
-  }
+  },
+  "keywords": [
+    "chart",
+    "github",
+    "map",
+    "stargazer",
+    "statistics",
+    "visualisation",
+    "world"
+  ]
 }
