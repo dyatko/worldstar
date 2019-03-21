@@ -40,7 +40,7 @@ module.exports.getSVG = ([countryPopularity, max]) => {
         stats.push({
           name,
           stars,
-          fromMax: Math.round(ratio * 100) + '%',
+          fromMax: Math.round(ratio * 100) + "%",
           opacity
         });
 

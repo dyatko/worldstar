@@ -8,7 +8,7 @@ const requestOptions = {
     Authorization: "token " + argv.githubToken
   }
 };
-const maxPages = Math.ceil(argv.max) / 100
+const maxPages = Math.ceil(argv.max) / 100;
 let numberOfPages = 0;
 let numberOfRequests = 0;
 let remainingRequests = Infinity;
@@ -52,17 +52,20 @@ module.exports.getStargazers = url => {
 };
 
 module.exports.getGeoLocations = stargazers => {
-  const progress = new ProgressBar("Locating stargazer :current out of :total :bar", {
-    total: stargazers.length,
-    clear: true
-  });
+  const progress = new ProgressBar(
+    "Locating stargazer :current out of :total :bar",
+    {
+      total: stargazers.length,
+      clear: true
+    }
+  );
 
   console.clear();
   return Promise.all(
     stargazers.map(stargazer => {
       if (!remainingRequests) {
         progress.terminate();
-        console.warn('No GitHub requests left for this hour!');
+        console.warn("No GitHub requests left for this hour!");
         return {};
       }
 

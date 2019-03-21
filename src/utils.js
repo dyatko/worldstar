@@ -60,7 +60,8 @@ module.exports.argv = yargs
   })
   .option("max", {
     alias: "m",
-    description: "Maximum number of stargazers due to GitHub allows up to 5000 requests/hour",
+    description:
+      "Maximum number of stargazers due to GitHub allows up to 5000 requests/hour",
     default: 1000,
     required: true
   })
@@ -69,5 +70,4 @@ module.exports.argv = yargs
     description: "Output path",
     default: "worldstar.svg",
     required: true
-  })
-  .argv;
+  }).argv;
