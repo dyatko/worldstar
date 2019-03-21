@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@types/d3": "5.7.1",
-    "@types/node-fetch": "2.1.6",
+    "@types/node-fetch": "2.1.7",
     "@types/progress": "2.0.3",
     "@types/topojson": "3.2.1",
     "@types/yargs": "12.0.10",
