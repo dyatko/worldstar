@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="160px" preserveAspectRatio="none" style="width:230px;height:160px;" version="1.1" viewBox="0 0 230 160" width="230px" zoomAndPan="magnify"><defs/><g><ellipse cx="163.7487" cy="37.242" fill="#F8F8F8" rx="27.7487" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="35" x="146.2487" y="40.9842">github</text><ellipse cx="163.3534" cy="86.5707" fill="#F8F8F8" rx="55.8534" ry="13.5707" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="77" x="124.8534" y="90.3129">google-maps</text><ellipse cx="33.7487" cy="37.242" fill="#F8F8F8" rx="27.7487" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="35" x="16.2487" y="40.9842">index</text><ellipse cx="88.4706" cy="136.242" fill="#F8F8F8" rx="19.9706" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="76.4706" y="139.9842">utils</text><ellipse cx="98.4203" cy="37.242" fill="#F8F8F8" rx="24.9203" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="31" x="82.9203" y="40.9842">world</text><!--link github to google-maps--><path d="M163.5,50.4801 C163.5,55.7834 163.5,62.0627 163.5,67.8293 " fill="none" id="github-google-maps" style="stroke: #000000; stroke-width: 0.55;"/><polygon fill="#000000" points="163.5,72.9384,167.5,63.9384,163.5,67.9384,159.5,63.9384,163.5,72.9384" style="stroke: #000000; stroke-width: 0.55;"/><!--link github to utils--><path d="M141.645,45.041 C128.058,50.5374 111.355,59.5341 101.5,73 C91.9815,86.0062 89.1006,104.4389 88.3772,117.8232 " fill="none" id="github-utils" style="stroke: #000000; stroke-width: 0.55;"/><polygon fill="#000000" points="88.1927,122.8618,92.5197,114.0144,88.3758,117.8652,84.525,113.7213,88.1927,122.8618" style="stroke: #000000; stroke-width: 0.55;"/><!--link google-maps to utils--><path d="M144.961,99.2416 C133.319,106.6146 118.369,116.083 106.777,123.4243 " fill="none" id="google-maps-utils" style="stroke: #000000; stroke-width: 0.55;"/><polygon fill="#000000" points="102.3545,126.2255,112.0981,124.7893,106.5786,123.5502,107.8177,118.0308,102.3545,126.2255" style="stroke: #000000; stroke-width: 0.55;"/><!--link <b>index</b> to github--><path d="M47.7761,25.59 C55.03,20.516 64.2511,15.107 73.5,12.5 C94.8886,6.47 102.1114,6.47 123.5,12.5 C131.015,14.618 138.511,18.587 144.949,22.722 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-github" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="149.224,25.59,143.9794,17.2537,145.0721,22.804,139.5218,23.8967,149.224,25.59" style="stroke: #000000; stroke-width: 1.0;"/><!--link <b>index</b> to utils--><path d="M40.2441,49.8941 C50.0812,67.2431 68.3896,99.5326 79.408,118.965 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-utils" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="82.0426,123.6115,81.083,113.8095,79.5764,119.262,74.1238,117.7555,82.0426,123.6115" style="stroke: #000000; stroke-width: 1.0;"/><!--link <b>index</b> to world--><path d="M61.1758,37 C63.4721,37 65.7684,37 68.0647,37 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-world" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="73.4228,37,64.4228,33,68.4228,37,64.4228,41,73.4228,37" style="stroke: #000000; stroke-width: 1.0;"/><script type="text/plantuml"><![CDATA[
+@startuml
+
+scale max 1920 width
+top to bottom direction
+
+skinparam nodesep 12
+skinparam ranksep 23
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Tahoma
+skinparam defaultFontSize 12
+skinparam roundCorner 4
+skinparam dpi 150
+skinparam arrowColor black
+skinparam arrowThickness 0.55
+skinparam packageTitleAlignment left
+
+skinparam usecase {
+  borderThickness 0.5
+}
+
+skinparam rectangle {
+  borderThickness 0.5
+}
+
+skinparam component {
+  borderThickness 1
+}
+
+
+(github)
+(google-maps)
+(<b>index</b>)
+(utils)
+(world)
+
+
+(github) --> (google-maps)
+(github) --> (utils)
+(google-maps) --> (utils)
+(<b>index</b>) -[thickness=1]> (github)
+(<b>index</b>) -[thickness=1]> (utils)
+(<b>index</b>) -[thickness=1]> (world)
+
+@enduml
+
+
+' View and edit on https://arkit.herokuapp.com
+]]></script></g></svg>
