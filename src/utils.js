@@ -56,7 +56,7 @@ module.exports.argv = yargs
   .option("output", {
     alias: "o",
     description: "Output path",
-    default: "worldmap.svg",
+    default: "worldstar.svg",
     required: true
   })
   .option("repo", {

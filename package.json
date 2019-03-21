@@ -1,5 +1,5 @@
 {
-  "name": "worldmap",
+  "name": "worldstar",
   "version": "1.0.0",
   "description": "Generates world map chart of GitHub stargazers",
   "scripts": {
@@ -10,11 +10,11 @@
   "license": "MIT",
   "main": "src/index.js",
   "bin": {
-    "worldmap": "src/index.js"
+    "worldstar": "src/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dyatko/worldmap.git"
+    "url": "git+https://github.com/dyatko/worldstar.git"
   },
   "dependencies": {
     "@google/maps": "^0.5.5",
