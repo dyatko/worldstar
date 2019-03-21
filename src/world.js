@@ -34,18 +34,20 @@ module.exports.getSVG = ([countryPopularity, max]) => {
 
       if (stars) {
         const ratio = stars / max;
-        const opacity = ratio * 0.3 + 0.7;
+        const opacity = (ratio * 0.3 + 0.7).toFixed(2);
 
         countryPopularity.remove(name);
         stats.push({
           name,
-          stars
+          stars,
+          fromMax: Math.round(ratio * 100) + '%',
+          opacity
         });
 
         return `rgba(36, 41, 46, ${opacity})`;
       }
 
-      return "none";
+      return "white";
     })
     .style("stroke", "#afafaf")
     .style("stroke-width", "0.6px")

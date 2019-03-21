@@ -53,14 +53,21 @@ module.exports.argv = yargs
     default: process.env.GOOGLE_TOKEN,
     required: true
   })
+  .option("repo", {
+    alias: "r",
+    description: "GitHub repo to parse, e.g. dyatko/arkit",
+    required: true
+  })
+  .option("max", {
+    alias: "m",
+    description: "Maximum number of stargazers due to GitHub allows up to 5000 requests/hour",
+    default: 1000,
+    required: true
+  })
   .option("output", {
     alias: "o",
     description: "Output path",
     default: "worldstar.svg",
     required: true
   })
-  .option("repo", {
-    alias: "r",
-    description: "GitHub repo to parse, e.g. dyatko/arkit",
-    required: true
-  }).argv;
+  .argv;
