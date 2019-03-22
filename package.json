@@ -1,6 +1,6 @@
 {
   "name": "worldstar",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Generates world map chart of GitHub stargazers",
   "scripts": {
     "prettier": "prettier --write \"src/*.js\"",
@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@google/maps": "^0.5.5",
+    "color": "^3.1.0",
     "d3": "^5.9.2",
     "d3-node": "^2.1.0",
     "node-fetch": "^2.3.0",
@@ -27,6 +28,7 @@
     "yargs": "^13.2.2"
   },
   "devDependencies": {
+    "@types/color": "^3.0.0",
     "@types/d3": "5.7.1",
     "@types/node-fetch": "2.1.7",
     "@types/progress": "2.0.3",

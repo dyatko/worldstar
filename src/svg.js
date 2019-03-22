@@ -2,8 +2,11 @@ const fs = require("fs");
 const d3 = require("d3");
 const D3Node = require("d3-node");
 const topojson = require("topojson");
+const color = require("color");
+const { argv } = require("./utils");
 
 const countryNames = d3.map();
+const simplify = number => parseFloat(Number(number).toFixed(2));
 
 d3.tsvParse(
   fs.readFileSync("./node_modules/world-atlas/world/110m.tsv").toString(),
@@ -36,21 +39,20 @@ module.exports.getSVG = ([countryPopularity]) => {
       const stars = countryPopularity.get(name);
 
       if (stars) {
-        const saturation = (
-          splits.indexOf(stars) /
-          (splits.length - 1)
-        ).toFixed(2);
-        const opacity = (saturation * 0.3 + 0.7).toFixed(2);
+        const weight = simplify(splits.indexOf(stars) / (splits.length - 1));
+        const whiten = simplify((1 - weight) / 2);
 
         countryPopularity.delete(name);
         stats.push({
           name,
           stars,
-          saturation,
-          opacity
+          weight,
+          whiten
         });
 
-        return `rgba(36, 41, 46, ${opacity})`;
+        return color(argv.color)
+          .mix(color("white"), whiten)
+          .hex();
       }
 
       return "white";

@@ -64,6 +64,12 @@ module.exports.argv = yargs
     default: 1000,
     required: true
   })
+  .option("color", {
+    alias: "c",
+    description: "Country color",
+    default: "#24292e",
+    required: true
+  })
   .option("output", {
     alias: "o",
     description: "Output path",
