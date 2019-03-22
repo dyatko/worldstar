@@ -4,6 +4,7 @@ const D3Node = require("d3-node");
 const topojson = require("topojson");
 const color = require("color");
 const { argv } = require("./utils");
+const SVGO = require("svgo");
 
 const countryNames = new Map();
 const simplify = number => parseFloat(Number(number).toFixed(2));
@@ -13,6 +14,25 @@ d3.tsvParse(
   data => countryNames.set(data.iso_n3, data.iso_a2)
 );
 
+const stats = [];
+const getColor = (name, stars, splits) => {
+  if (!stars) return "#FFFFFF";
+
+  const weight = simplify(splits.indexOf(stars) / (splits.length - 1));
+  const whiten = simplify((1 - weight) / 2);
+
+  stats.push({
+    name,
+    stars,
+    weight,
+    whiten
+  });
+
+  return color(argv.color)
+    .mix(color("white"), whiten)
+    .hex();
+};
+
 module.exports.getSVG = ([countryPopularity]) => {
   const d3n = new D3Node();
   const svg = d3n.createSVG(640, 420);
@@ -21,7 +41,6 @@ module.exports.getSVG = ([countryPopularity]) => {
   const geoPath = d3.geoPath(
     d3.geoMercator().fitWidth(svg.attr("width"), countries)
   );
-  const stats = [];
   const splits = Array.from(new Set(countryPopularity.values())).sort(
     (a, b) => a - b
   );
@@ -37,25 +56,9 @@ module.exports.getSVG = ([countryPopularity]) => {
     .style("fill", d => {
       const name = countryNames.get(d.id);
       const stars = countryPopularity.get(name);
+      countryPopularity.delete(name);
 
-      if (stars) {
-        const weight = simplify(splits.indexOf(stars) / (splits.length - 1));
-        const whiten = simplify((1 - weight) / 2);
-
-        countryPopularity.delete(name);
-        stats.push({
-          name,
-          stars,
-          weight,
-          whiten
-        });
-
-        return color(argv.color)
-          .mix(color("white"), whiten)
-          .hex();
-      }
-
-      return "white";
+      return getColor(name, stars, splits);
     })
     .style("stroke", "#afafaf")
     .style("stroke-width", "0.6px")
@@ -65,5 +68,5 @@ module.exports.getSVG = ([countryPopularity]) => {
 
   console.log("Unmapped countries", Array.from(countryPopularity.entries()));
 
-  return Promise.resolve(d3n.svgString());
+  return new SVGO().optimize(d3n.svgString()).then(optimised => optimised.data);
 };
