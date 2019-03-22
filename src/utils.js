@@ -21,11 +21,16 @@ process.on("uncaughtException", e => console.error(e));
 process.on("unhandledRejection", e => console.error(e));
 process.on("beforeExit", persistCache);
 
+const shortNameMapping = {
+  Ireland: "IE"
+};
+
 module.exports.getCountryPopularity = stargazers =>
   stargazers.reduce(
     ([countryPopularity, max], stargazer) => {
       if (stargazer.country) {
-        const name = stargazer.country.long_name;
+        const shortName = stargazer.country.short_name;
+        const name = shortNameMapping[shortName] || shortName;
         const rate = (countryPopularity.get(name) || 0) + 1;
 
         max = Math.max(rate, max);

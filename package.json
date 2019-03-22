@@ -1,10 +1,11 @@
 {
   "name": "worldstar",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Generates world map chart of GitHub stargazers",
   "scripts": {
     "prettier": "prettier --write \"src/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run prettier && npx arkit"
   },
   "author": "Marat Dyatko <i@marat.by>",
   "license": "MIT",

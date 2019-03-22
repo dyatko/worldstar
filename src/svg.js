@@ -5,18 +5,18 @@ const topojson = require("topojson");
 const color = require("color");
 const { argv } = require("./utils");
 
-const countryNames = d3.map();
+const countryNames = new Map();
 const simplify = number => parseFloat(Number(number).toFixed(2));
 
 d3.tsvParse(
-  fs.readFileSync("./node_modules/world-atlas/world/110m.tsv").toString(),
-  data => countryNames.set(data.iso_n3, data.name)
+  fs.readFileSync("./node_modules/world-atlas/world/50m.tsv").toString(),
+  data => countryNames.set(data.iso_n3, data.iso_a2)
 );
 
 module.exports.getSVG = ([countryPopularity]) => {
   const d3n = new D3Node();
   const svg = d3n.createSVG(640, 420);
-  const world = require("world-atlas/world/110m");
+  const world = require("world-atlas/world/50m");
   const countries = topojson.feature(world, world.objects.countries);
   const geoPath = d3.geoPath(
     d3.geoMercator().fitWidth(svg.attr("width"), countries)
@@ -62,6 +62,8 @@ module.exports.getSVG = ([countryPopularity]) => {
     .attr("d", geoPath);
 
   console.table(stats.sort((a, b) => b.stars - a.stars));
+
+  console.log("Unmapped countries", Array.from(countryPopularity.entries()));
 
   return Promise.resolve(d3n.svgString());
 };
