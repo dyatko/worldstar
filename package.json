@@ -1,6 +1,6 @@
 {
   "name": "worldstar",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Generates world map chart of GitHub stargazers",
   "scripts": {
     "prettier": "prettier --write \"src/*.js\"",
@@ -26,7 +26,7 @@
     "progress": "^2.0.3",
     "svgo": "^1.2.0",
     "topojson": "^3.0.2",
-    "world-atlas": "^1.1.4",
+    "visionscarto-world-atlas": "0.0.5",
     "yargs": "^13.2.2"
   },
   "devDependencies": {
