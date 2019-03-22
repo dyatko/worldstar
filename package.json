@@ -25,7 +25,6 @@
     "node-fetch": "^2.3.0",
     "progress": "^2.0.3",
     "svgo": "^1.2.0",
-    "topojson": "^3.0.2",
     "visionscarto-world-atlas": "0.0.5",
     "yargs": "^13.2.2"
   },
@@ -35,7 +34,6 @@
     "@types/node-fetch": "2.1.7",
     "@types/progress": "2.0.3",
     "@types/svgo": "^1.0.1",
-    "@types/topojson": "3.2.1",
     "@types/yargs": "12.0.10",
     "arkit": "1.4.3",
     "prettier": "1.16.4"
