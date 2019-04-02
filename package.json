@@ -35,7 +35,7 @@
     "@types/progress": "2.0.3",
     "@types/svgo": "1.0.1",
     "@types/yargs": "12.0.10",
-    "arkit": "1.5.0",
+    "arkit": "1.5.1",
     "prettier": "1.16.4"
   },
   "arkit": {
