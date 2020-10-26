@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@types/color": "3.0.0",
-    "@types/d3": "5.7.1",
+    "@types/d3": "5.16.3",
     "@types/node-fetch": "2.1.7",
     "@types/progress": "2.0.3",
     "@types/svgo": "1.0.1",
