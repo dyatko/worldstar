@@ -26,7 +26,7 @@
     "progress": "^2.0.3",
     "svgo": "^1.2.0",
     "visionscarto-world-atlas": "0.0.5",
-    "yargs": "^13.2.2"
+    "yargs": "^16.0.0"
   },
   "devDependencies": {
     "@types/color": "3.0.0",
@@ -34,7 +34,7 @@
     "@types/node-fetch": "2.1.7",
     "@types/progress": "2.0.3",
     "@types/svgo": "1.0.1",
-    "@types/yargs": "12.0.11",
+    "@types/yargs": "16.0.1",
     "arkit": "1.5.1",
     "prettier": "1.16.4"
   },
