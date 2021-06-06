@@ -20,7 +20,7 @@
   "dependencies": {
     "@google/maps": "^0.5.5",
     "color": "^3.1.0",
-    "d3": "^5.9.2",
+    "d3": "^6.0.0",
     "d3-node": "^2.1.0",
     "node-fetch": "^2.3.0",
     "progress": "^2.0.3",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@types/color": "3.0.0",
-    "@types/d3": "5.7.1",
+    "@types/d3": "6.7.0",
     "@types/node-fetch": "2.1.7",
     "@types/progress": "2.0.3",
     "@types/svgo": "1.0.1",
