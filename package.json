@@ -24,7 +24,7 @@
     "d3-node": "^2.1.0",
     "node-fetch": "^2.3.0",
     "progress": "^2.0.3",
-    "svgo": "^1.2.0",
+    "svgo": "^2.0.0",
     "visionscarto-world-atlas": "0.0.5",
     "yargs": "^13.2.2"
   },
