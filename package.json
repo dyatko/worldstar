@@ -24,7 +24,7 @@
     "d3-node": "^2.1.0",
     "node-fetch": "^2.3.0",
     "progress": "^2.0.3",
-    "svgo": "^1.2.0",
+    "svgo": "^2.0.0",
     "visionscarto-world-atlas": "0.0.5",
     "yargs": "^13.2.2"
   },
@@ -33,7 +33,7 @@
     "@types/d3": "5.7.1",
     "@types/node-fetch": "2.1.7",
     "@types/progress": "2.0.3",
-    "@types/svgo": "1.0.1",
+    "@types/svgo": "2.6.4",
     "@types/yargs": "12.0.11",
     "arkit": "1.5.1",
     "prettier": "1.16.4"
