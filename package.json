@@ -31,7 +31,7 @@
   "devDependencies": {
     "@types/color": "3.0.0",
     "@types/d3": "5.7.1",
-    "@types/node-fetch": "2.1.7",
+    "@types/node-fetch": "2.6.11",
     "@types/progress": "2.0.3",
     "@types/svgo": "1.0.1",
     "@types/yargs": "12.0.11",
